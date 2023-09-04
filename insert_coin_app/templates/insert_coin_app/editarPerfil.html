@@ -1,0 +1,26 @@
+{% extends 'insert_coin_app/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    <h1>Editar Usuario</h1>
+{% endblock titulo %}
+
+
+   
+{% block contenido %}
+    <h2>Editar Usuario</h2>
+
+   <form action="" method="post">
+<table>
+    <thead>
+        <tr>
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <input type="submit" value="Editar Usuario">
+    </form>
+        </tr>
+    </thead>
+</table>
+{% endblock contenido %}

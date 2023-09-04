@@ -1,0 +1,58 @@
+{% extends 'insert_coin_app/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    X BOX SERIES X
+{% endblock titulo %}
+
+{% block contenido %}
+<table>
+    <tr>
+        <td width="200"><h2>XBOX SX</h2></td>
+        <td>
+            <a
+            href="{% url 'create_xbox' %}"
+            class="btn btn-primary btn-sm"
+            ><i class="fa-solid fa-plus fa-lg" title="New Record"></i>
+            </a>
+        </td>
+    </tr>
+</table>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Género</th>
+            <th>Online</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for x in XBOX %}
+        <tr>
+            <td>{{ x.id }}</td>
+            <td>{{ x.nombre }}</td>
+            <td>{{ x.genero }}</td>
+            <td>{{ x.online }}</td>
+            <td>{{ x.precio_con_simbolo }}</td>
+            <td>
+                <a
+                    href="{% url 'update_xbox' x.id %}"
+                    class="btn btn-primary"
+                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 5.rem; --bs-btn-font-size: 1.1rem;"
+                    ><i class="fa-solid fa-edit fa-lg" title="Edit Record"></i>
+                </a>
+                <a 
+                    href="{% url 'delete_xbox' x.id %}"
+                    class="btn btn-danger"
+                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 5.rem; --bs-btn-font-size: 1.1rem;"
+                    ><i class="fa-solid fa-trash fa-lg" title="Delete Record"></i>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+</table>
+{% endblock contenido %}

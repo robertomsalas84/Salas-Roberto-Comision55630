@@ -1,0 +1,34 @@
+{% extends 'insert_coin_app/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    Página de Bienvenida
+{% endblock titulo %}
+
+{% block contenido %}
+    <h1> {{ titulo }}</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Género</th>
+                <th>Online</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for c in PS5 %}
+        <tr>
+            <td>{{ c.id }}</td>
+            <td>{{ c.nombre }}</td>
+            <td>{{ c.genero }}</td>
+            <td>{{ c.online }}</td>
+            <td>{{ c.precio_con_simbolo }}</td>
+        </tr>
+
+    {% endfor %}
+        </tbody>
+    </table>
+{% endblock contenido %}

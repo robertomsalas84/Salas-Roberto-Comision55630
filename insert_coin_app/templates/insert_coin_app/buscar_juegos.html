@@ -1,0 +1,16 @@
+{% extends 'insert_coin_app/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    <h1>Buscar juego de PS5 por nombre</h1>
+{% endblock titulo %}
+
+{% block contenido %}
+    <h2>Buscar juego de PS5 por nombre</h2>
+    <form action="/buscar_juegos2" method="get">
+        {% csrf_token %}
+        
+        <p>Buscar: <input type="text" name="buscar_juegos" id="buscar_juegos"></p>
+        <input type="submit" value="Buscar">
+    </form>
+{% endblock contenido %}

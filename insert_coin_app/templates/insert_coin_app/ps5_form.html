@@ -1,0 +1,17 @@
+{% extends 'insert_coin_app/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    <h1>Agregar nuevo juego de PS5</h1>
+{% endblock titulo %}
+
+{% block contenido %}
+    <h2>Agregar nuevo juego de PS5</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+       <table>
+            {{ form.as_table}}
+       </table>
+       <input type="submit" value="Guardar">
+    </form>
+{% endblock contenido %}

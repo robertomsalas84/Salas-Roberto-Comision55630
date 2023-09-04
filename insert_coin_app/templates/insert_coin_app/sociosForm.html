@@ -1,0 +1,27 @@
+{% extends 'insert_coin_app/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    <h1>Agregar nuevo socio de Insert Coin</h1>
+{% endblock titulo %}
+
+
+    <h2>Agregar un nuevo socio</h2>
+{% block contenido %}
+    <h2>Agregar un nuevo socio</h2>
+
+   <form action="" method="post">
+<table>
+    <thead>
+        <tr>
+        {% csrf_token %}
+        <p>Nombre: <input type="text" name="nombre" id="nombre"></p>
+        <p>Apellido: <input type="text" name="apellido" id="apellido"></p>
+        <p>Email: <input type="email" name="email" id="email"></p>
+        <p>Edad: <input type="number" name="edad" id="edad"></p>
+        <input type="submit" value="Agregar">
+    </form>
+        </tr>
+    </thead>
+</table>
+{% endblock contenido %}

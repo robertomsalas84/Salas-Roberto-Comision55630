@@ -1,0 +1,19 @@
+{% extends 'insert_coin_app/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    
+{% endblock titulo %}
+
+{% block contenido %}
+    <h1>Ningún juego se ingresó en la búsqueda. Intente de nuevo por favor.</h1>
+    <h2></h2>
+
+    <h3>Buscar juego de PS5 por nombre</h3>
+    <form action="/buscar_juegos2" method="get">
+        {% csrf_token %}
+        
+        <p>Buscar: <input type="text" name="buscar_juegos" id="buscar_juegos"></p>
+        <input type="submit" value="Buscar">
+    </form>
+{% endblock contenido %} 

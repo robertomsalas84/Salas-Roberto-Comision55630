@@ -1,0 +1,58 @@
+{% extends 'insert_coin_app/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    PS5
+{% endblock titulo %}
+
+{% block contenido %}
+<table>
+    <tr>
+        <td width="200"><h2>PS5</h2></td>
+        <td>
+            <a
+            href="{% url 'create_ps5' %}"
+            class="btn btn-primary btn-sm"
+            ><i class="fa-solid fa-plus fa-lg" title="New Record"></i>
+            </a>
+        </td>
+    </tr>
+</table>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Género</th>
+            <th>Online</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in ps5_list  %}
+        <tr>
+            <td>{{ p.id }}</td>
+            <td>{{ p.nombre }}</td>
+            <td>{{ p.genero }}</td>
+            <td>{{ p.online }}</td>
+            <td>{{ p.precio_con_simbolo }}</td>
+            <td>
+                <a
+                    href="{% url 'update_ps5' p.id %}"
+                    class="btn btn-primary"
+                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 5.rem; --bs-btn-font-size: 1.1rem;"
+                    ><i class="fa-solid fa-edit fa-lg" title="Edit Record"></i>
+                </a>
+                <a 
+                    href="{% url 'delete_ps5' p.id %}"
+                    class="btn btn-danger"
+                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: 5.rem; --bs-btn-font-size: 1.1rem;"
+                    ><i class="fa-solid fa-trash fa-lg" title="Delete Record"></i>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+</table>
+{% endblock contenido %}

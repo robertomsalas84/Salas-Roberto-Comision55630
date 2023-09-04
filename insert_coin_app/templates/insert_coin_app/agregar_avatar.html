@@ -1,0 +1,25 @@
+{% extends 'insert_coin_app/base.html' %}
+{% load static %}
+
+{% block titulo %}
+    <h1>Agregar Avatar</h1>
+{% endblock titulo %}
+
+
+   
+{% block contenido %}
+    <h2>Agregar o modificar Avatar</h2>
+   <form action="" method="post", enctype="multipart/form-data">
+<table>
+    <thead>
+        <tr>
+        {% csrf_token %}
+        <table>
+            {{form.as_table}}
+        </table>
+        <input type="submit" value="Crear Avatar">
+    </form>
+        </tr>
+    </thead>
+</table>
+{% endblock contenido %}
